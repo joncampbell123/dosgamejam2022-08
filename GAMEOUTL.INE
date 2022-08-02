@@ -55,3 +55,41 @@ If it isn't clear, this silly game is based on the BASIC
 program DONKEY.BAS that appeared in early versions of
 MS-DOS and builds on it... in spaaaaaaaaaace!
 
+---------------------------------------------------------
+
+Programming techniques in this project:
+
+- 16-bit real mode and how to code for it.
+- Use of Zlib library in 16-bit real mode. Library is
+  pruned down to minimum decompression functions.
+- Use of 256-color VGA mode, using unchained mode
+  meaning use of bitplanes for performance.
+- 386 assembly language.
+- Sound Blaster and Adlib programming. Rather than drag
+  in the mess of sndsb from DOSLIB, code will be fresh
+  and simple. Adlib programming as well.
+- EMM386.EXE support. Some parts of the game might avoid
+  loading from disk delays if it can cache in expanded
+  memory. Optional, of course. Or--
+- HIMEM.SYS extended memory. Caching, same as expanded
+  memory. To be added after game jam completion. Code
+  will choose expanded or extended memory at runtime.
+- Use of zlib to decompress PNG images in real mode.
+  PNG is actually a pretty simple format if you do not
+  use anything beyond basic functions and do not need
+  pixel or format conversion.
+- Programming know-how to do FMV sequences from an AVI
+  file. For simplicity and lack of time, AVIs will have
+  no sound and use the extremely simple "Microsoft Video 1"
+  codec aka MS-CRAM.
+- PNG font storage code initially written in the August
+  2020 game jam. PNG images with font data and extra
+  PNG chunks describing where each character is and what
+  code it represents.
+
+Hopefully this might help others understand what programming
+in 16-bit real mode DOS in the early 1990s was like and
+help in writing *real* retro DOS code instead of just
+throwing DJGPP and Allegro into a pot and relying entirely
+on that.
+
