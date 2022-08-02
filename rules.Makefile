@@ -1,7 +1,13 @@
 
-WATCOM=/usr/src/open-watcom-v2/rel
+export WATCOM := /usr/src/open-watcom-v2/rel
+export EDPATH := $(WATCOM)/eddat
+export INCLUDE := $(WATCOM)/lh
+export PATH := $(WATCOM)/binl:$(WATCOM)/binw:$(PATH)
 
-WCC=$(WATCOM)/binl/wcc
-WLINK=$(WATCOM)/binl/wlink
+# do not "export" these!
+WCC := $(WATCOM)/binl/wcc
+WLINK := $(WATCOM)/binl/wlink
 
-WATCOMENV=WATCOM=$(WATCOM) PATH=$(WATCOM)/binl:$(WATCOM)/binw:$(PATH) EDPATH=$(WATCOM)/eddat INCLUDE=$(WATCOM)/lh
+# additional prepend to commands
+WATCOMENV= 
+
