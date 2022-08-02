@@ -4,18 +4,12 @@ THISDIR=.
 
 include $(TOTOPDIR)/rules.Makefile
 
-all: bin obj bin/donkeys.exe
+all: bin/donkeys.exe
 
 ZLIBIMIN=zlibimin/obj/zlibimin.lib
 
 $(ZLIBIMIN):
 	make -C zlibimin
-
-obj:
-	mkdir -p obj
-
-bin:
-	mkdir -p bin
 
 # large memory model.
 # -zu needed, must not assume DS == SS.
@@ -30,10 +24,12 @@ WCCOPT=-fr=null -fo=$(THISDIR)/obj/.obj
 
 DONKEYS_OBJ=obj/main.obj
 
-obj/main.obj: obj main.c
+obj/main.obj: main.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-bin/donkeys.exe: bin obj $(DONKEYS_OBJ) $(ZLIBIMIN)
+bin/donkeys.exe: $(DONKEYS_OBJ) $(ZLIBIMIN)
+	mkdir -p obj bin
 	$(WATCOMENV) $(WLINK) option quiet option map=obj/donkeys.map system dos $(foreach lib,$(filter %.lib,$^),library $(lib)) $(foreach obj,$(filter %.obj,$^),file $(obj)) name bin/donkeys.exe
 
 clean:

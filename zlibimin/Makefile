@@ -4,13 +4,7 @@ THISDIR=.
 
 include $(TOTOPDIR)/rules.Makefile
 
-all: bin obj obj/zlibimin.lib
-
-obj:
-	mkdir -p obj
-
-bin:
-	mkdir -p bin
+all: obj/zlibimin.lib
 
 # large memory model.
 # -zu needed, must not assume DS == SS.
@@ -25,34 +19,44 @@ WCCOPT=-fr=null -fo=$(THISDIR)/obj/.obj
 
 ZLIBIMIN_OBJ=obj/adler32.obj obj/compress.obj obj/crc32.obj obj/inffast.obj obj/inflate.obj obj/inftrees.obj obj/trees.obj obj/uncompr.obj obj/zutil.obj
 
-obj/adler32.obj: obj adler32.c
+obj/adler32.obj: adler32.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/compress.obj: obj compress.c
+obj/compress.obj: compress.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/crc32.obj: obj crc32.c
+obj/crc32.obj: crc32.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/inffast.obj: obj inffast.c
+obj/inffast.obj: inffast.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/inflate.obj: obj inflate.c
+obj/inflate.obj: inflate.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/inftrees.obj: obj inftrees.c
+obj/inftrees.obj: inftrees.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/trees.obj: obj trees.c
+obj/trees.obj: trees.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/uncompr.obj: obj uncompr.c
+obj/uncompr.obj: uncompr.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/zutil.obj: obj zutil.c
+obj/zutil.obj: zutil.c
+	mkdir -p obj
 	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
-obj/zlibimin.lib: bin obj $(ZLIBIMIN_OBJ)
+obj/zlibimin.lib: $(ZLIBIMIN_OBJ)
+	mkdir -p obj
 	rm -f $@
 	wlib -q -b -c $@ $(foreach obj,$(filter %.obj,$^),-+$(obj))
 
