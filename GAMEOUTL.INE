@@ -1,0 +1,57 @@
+
+Bill Gates is driving a spaceship, starship "Janus" home
+to Chicago base (those are Windows code names, of course).
+Contacts local sector at entry point to request entry.
+Entry point grants access warning of extreme caution due
+to extreme infestation of "space donkeys".
+
+Intent is to use knowledge of AVI format and VGA 256-color
+palette quantization along with FFMPEG to use a short loop
+of Bill Gates driving, taken from "Pirates of Silicon Valley"
+when showing Bill Gates in the ship. Because why not.
+
+Level 1 "Move your asses":
+
+Yeah, each level is going to have a silly pun regarding
+donkeys and the alternate term "ass". Of course.
+
+In this level, just like DONKEY.BAS, you must move your
+space ship side to side to avoid "space donkeys" in your
+path. If you hit one, a sound effect plays based on the
+image of the donkey.
+
+ - Plain brown rectangular donkey-shaped blob that looks
+   like it came from the original game: Plays PC-speaker
+   noise like original game when hit.
+ - Generic donkey image #1: "HEE-HAW!"
+ - Generic donkey image #2: (grunt)
+ - Donkey from Shrek: "Ohh! He got me Shrek, he got me!"
+   or something equally funny from the movie.
+ - Other ideas?
+
+Play continues for a set time (or set number of donkeys?)
+before level ends and you win.
+
+This is the minimum point of the game to finish for the
+2022 game jam.
+
+Level 2 (TODO):
+
+Level ? The recursive donkey in "Ass-teroids":
+
+This donkey hints at the final battle by saying "did you
+know I'm a recursive donkey?". This donkey joins 2 of
+his friends on screen. Your ship turns into a simple
+wireframe arrow. Gameplay then functions like Asteroids
+(but this involves donkeys, so it is "Ass-teroids")
+and you must shoot the donkeys to break them into smaller
+and smaller donkeys before they finally disappear.
+
+Level ?
+
+---------------------------------------------------------
+
+If it isn't clear, this silly game is based on the BASIC
+program DONKEY.BAS that appeared in early versions of
+MS-DOS and builds on it... in spaaaaaaaaaace!
+
