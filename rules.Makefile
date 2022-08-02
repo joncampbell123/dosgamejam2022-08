@@ -6,6 +6,7 @@ export PATH := $(WATCOM)/binl:$(WATCOM)/binw:$(PATH)
 
 # do not "export" these!
 WCC := $(WATCOM)/binl/wcc
+WLIB := $(WATCOM)/binl/wlib
 WLINK := $(WATCOM)/binl/wlink
 
 # additional prepend to commands

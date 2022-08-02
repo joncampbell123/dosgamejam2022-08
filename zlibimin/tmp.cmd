@@ -1,0 +1,1 @@
+-fr=nul -fo=win32s3/.obj -i.. -i"../.." -dHAVE_CONFIG_H -dSTDC -e=2 -zq -mf -d0  -s -oilrb -ot -om -bt=nt -wx -fp3 -3r -dTARGET_MSDOS=32 -dTARGET_WINDOWS=31 -dMSDOS=1 -dTARGET86=386 -DMMODE=f -q -x -i"/usr/src/open-watcom-v2/rel/h;/usr/src/open-watcom-v2/rel/h/nt;/usr/src/open-watcom-v2/rel/h/nt/directx;/usr/src/open-watcom-v2/rel/h/nt/ddk" -bg -bt=nt zutil.c
