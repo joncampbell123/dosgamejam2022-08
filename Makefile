@@ -20,13 +20,14 @@ $(ZLIBIMIN):
 WCCFLAGS_DEBUG= -d9 -of
 WCCFLAGS_RELEASE= -d0 -os
 WCCFLAGS=-e=2 -zu -zq -ml $(WCCFLAGS_DEBUG) -oilrb -bt=dos -wx -3 -dTARGET_MSDOS=16 -dMSDOS=1 -dTARGET86=3 -DMMODE=m -q -i"$(WATCOM)/h"
+WCCLIBS=-i"$(TOTOPDIR)/zlibimin"
 WCCOPT=-fr=null -fo=$(THISDIR)/obj/.obj
 
 DONKEYS_OBJ=obj/main.obj
 
 obj/main.obj: main.c
 	mkdir -p obj
-	$(WATCOMENV) $(WCC) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
+	$(WATCOMENV) $(WCC) $(WCCLIBS) $(WCCFLAGS) $(WCCOPT) $(filter %.c,$^)
 
 bin/donkeys.exe: $(DONKEYS_OBJ) $(ZLIBIMIN)
 	mkdir -p obj bin
